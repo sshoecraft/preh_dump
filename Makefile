@@ -27,4 +27,13 @@ install: $(PROG)
 	sudo install -m 755 -o bin -g bin $(PROG) /usr/sbin
 
 clean:
-	rm -f $(PROG) $(OBJS)
+	rm -rf $(PROG) $(OBJS) $(CLEANFILES)
+
+push: clean
+	git add -A .
+	git commit -m refresh
+	git push
+
+pull: clean
+	git reset --hard
+	git pull
