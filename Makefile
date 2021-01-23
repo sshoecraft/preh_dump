@@ -1,7 +1,7 @@
 
 PROG=$(shell basename $(shell pwd))
 MYBMM_SRC=../mybmm
-SRCS=main.c preh.c can.c utils.c
+SRCS=main.c preh.c can.c utils.c log.c
 OBJS=$(SRCS:.c=.o)
 CFLAGS=-I$(MYBMM_SRC) -DPREH_DUMP
 #CFLAGS+=-Wall -O2 -pipe
